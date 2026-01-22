@@ -1,0 +1,38 @@
+<html>  
+  <head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>data and factorial</title> 
+    <link rel="stylesheet" href="index.css" /> 
+  </head> 
+  <body> 
+    <script> 
+      const displayDate = () => { 
+        const time = new Date(); 
+        const text = document.getElementById("text"); 
+        text.innerText = 
+          time.getMonth() + 1 + "/" + time.getDate() + "/" + time.getFullYear(); 
+      }; 
+      const handlefactorial = () => { 
+        const n = parseInt(prompt("Enter a number to calculate its factorial")); 
+        if (isNaN(n) || n < 0) { 
+          alert("please enter a valid non negative number"); 
+          return; 
+        } 
+        let l = 1; 
+        for (let i = 1; i <= n; i++) { 
+          l *= i; 
+        } 
+        alert("factorial is " + l); 
+      }; 
+    </script> 
+    <div class="main"> 
+      <div class="button"> 
+        <button onclick="displayDate()">display date</button> 
+      </div> 
+      <div class="button" id="text"></div> 
+      <div class="button"> 
+        <button onclick="handlefactorial()">calculate factorial</button> 
+      </div> 
+    </div> 
+  </body> 
+</html>
